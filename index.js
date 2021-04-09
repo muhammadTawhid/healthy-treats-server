@@ -6,7 +6,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 require('dotenv').config()
 
-const port = process.env.port || 5000
+const port =  5000
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -52,6 +52,4 @@ app.delete('/delete/:id', (req, res) => {
 });
 
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
+app.listen( process.env.PORT || port)
